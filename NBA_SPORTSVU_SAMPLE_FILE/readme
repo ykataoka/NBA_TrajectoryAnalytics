@@ -1,0 +1,80 @@
+[Source Files]
+ - trajectory.py : compute the 3 factors
+ - ConditionChecker.py : find the data which satisfies 3 conditions
+ - plot_***.py : test plot file
+ - ***.pkl : the analyzed data which is read by the visualization script (rep1/main2.py)
+ - ../rep1/main2.py : visualize the result on WebUI using Bokeh
+   (modification of past script, so there are some redundancy...)
+
+[Given Dataset]
+'NBA_ALL_ROSTER.XML'
+ - player's configuration
+ - player-code(id), name, position, number, height, weight, birth-date, high-school...
+'NBA_ALL_ROSTER.xsd'
+ - schema is declared in this file.
+
+'NBA_FINAL_ONCOURT$2016012523.XML'
+ - visiting-team-players list, home-team-players list
+ - game configuration
+ - ?id
+'NBA_FINAL_ONCOURT.xsd'
+ - schema is declared in this file.
+
+
+'NBA_FINAL_SEQUENCE_OPTICAL$2016012523_Q1.XML'
+ - optical flow data
+ - game clock, time, shot-clock
+ - example 
+# team-code.@global-id, player.@global-id, x?, y?, z?;
+-1,-1,49.37601,29.74255,4.25405; # this might be the ball location
+23,262882,20.47625,21.10303,0;
+23,266358,44.94889,19.41382,0;
+23,509450,29.95246,25.6483,0;
+23,604898,46.13548,31.11234,0;
+23,699950,65.54889,29.13574,0;
+5312,263884,63.19786,19.78119,0;
+5312,329824,46.13548,31.11234,0;
+5312,340730,65.54889,29.13574,0;
+5312,462980,65.22661,25.67978,0;
+5312,609567,44.94889,19.41382,0
+'NBA_FINAL_SEQUENCE_OPTICAL_Q1234OT1.xsd'
+ - schema is declared in this file.
+ 
+
+'NBA_FINAL_SEQUENCE_PBP_OPTICAL$2016012523.XML'
+ - ?the sequence of event? what does the @event-id mean?
+{
+  "@event-id": "21", 
+  "@game-clock": "713.97", 
+  "@time": "1453777820408", 
+  "@player-id": "4149", 
+  "@global-player-id": "262882", 
+  "@pbp-seq-number": "", 
+  "@shot-clock": "19.57"
+},
+'NBA_FINAL_SEQUENCE_PBP_OPTICAL.xsd'
+ - schema is declared in this file.
+
+
+'NBA_FINALBOX_OPTICAL$2016012523.XML'
+ - the log of shot, assist, rebound...
+ - the closest defander information is there too.
+'NBA_FINALBOX_OPTICAL.xsd'
+ - event is declared here
+ - In other words, events that are not declared in this file is the candadate of "measuring unmeasurabe"
+
+
+'NBA_FINALPBP_EXP$2016012523.XML'
+ - there is information about loose ball if it is foul event.
+
+
+'NBA_SCHEDULE.XML'
+ - visiting team, home-team, time, date, tv, stadium, game code...
+'NBA_SCHEDULE.xsd'
+ - 
+
+
+[Summary of data]
+ - 'NBA_FINAL_SEQUENCE_OPTICAL$2016012523_Q1.XML'
+ - Loose Ball Event is found only in the foul event.
+ - analytics on this event, and expand to different use case

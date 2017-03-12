@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sports-statistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sports-boxscores">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="date">
+                <xs:complexType>
+                  <xs:attribute name="year" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="month" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="date" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="day" type="xs:unsignedByte" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="time">
+                <xs:complexType>
+                  <xs:attribute name="hour" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="minute" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="second" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="timezone" type="xs:string" use="required" />
+                  <xs:attribute name="utc-hour" type="xs:byte" use="required" />
+                  <xs:attribute name="utc-minute" type="xs:unsignedByte" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="version">
+                <xs:complexType>
+                  <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="season">
+                <xs:complexType>
+                  <xs:attribute name="season" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="nba-boxscores">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nba-boxscore">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="prescrubbed">
+                            <xs:complexType>
+                              <xs:attribute name="is-prescrubbed" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="date">
+                            <xs:complexType>
+                              <xs:attribute name="year" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="month" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="date" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="day" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="time">
+                            <xs:complexType>
+                              <xs:attribute name="hour" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="minute" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="timezone" type="xs:string" use="required" />
+                              <xs:attribute name="utc-hour" type="xs:byte" use="required" />
+                              <xs:attribute name="utc-minute" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="local-game-date">
+                            <xs:complexType>
+                              <xs:attribute name="year" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="month" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="date" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="day" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="local-time">
+                            <xs:complexType>
+                              <xs:attribute name="hour" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="minute" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="gamecode">
+                            <xs:complexType>
+                              <xs:attribute name="code" type="xs:unsignedInt" use="required" />
+                              <xs:attribute name="global-id" type="xs:unsignedInt" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="game-type">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="description" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="stadium">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                              <xs:attribute name="city" type="xs:string" use="required" />
+                              <xs:attribute name="state" type="xs:string" use="required" />
+                              <xs:attribute name="country" type="xs:string" use="required" />
+                              <xs:attribute name="global-id" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="coverage">
+                            <xs:complexType>
+                              <xs:attribute name="level" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="gamestate">
+                            <xs:complexType>
+                              <xs:attribute name="status" type="xs:string" use="required" />
+                              <xs:attribute name="status-id" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="quarter" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="minutes" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="seconds" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="segment-number" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="active-state" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="visiting-team">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="team-name">
+                                  <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="alias" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="team-city">
+                                  <xs:complexType>
+                                    <xs:attribute name="city" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="team-code">
+                                  <xs:complexType>
+                                    <xs:attribute name="global-id" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="record">
+                                  <xs:complexType>
+                                    <xs:attribute name="wins" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="losses" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="pct" type="xs:decimal" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="linescore">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="quarter">
+                                        <xs:complexType>
+                                          <xs:attribute name="quarter" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="score" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="score" type="xs:unsignedByte" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="home-team">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="team-name">
+                                  <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="alias" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="team-city">
+                                  <xs:complexType>
+                                    <xs:attribute name="city" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="team-code">
+                                  <xs:complexType>
+                                    <xs:attribute name="global-id" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="record">
+                                  <xs:complexType>
+                                    <xs:attribute name="wins" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="losses" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="pct" type="xs:decimal" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="linescore">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="quarter">
+                                        <xs:complexType>
+                                          <xs:attribute name="quarter" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="score" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="score" type="xs:unsignedByte" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="possessions">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="quarter">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="possession">
+                                        <xs:complexType>
+                                          <xs:attribute name="team-alias" type="xs:string" use="required" />
+                                          <xs:attribute name="team-global-id" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="team-id" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="time-start" type="xs:string" use="required" />
+                                          <xs:attribute name="time-end" type="xs:string" use="required" />
+                                          <xs:attribute name="start-timestamp" type="xs:unsignedLong" use="required" />
+                                          <xs:attribute name="end-timestamp" type="xs:unsignedLong" use="required" />
+                                          <xs:attribute name="possession-length" type="xs:string" use="required" />
+                                          <xs:attribute name="touches" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="passes" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="dribbles" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="result" type="xs:string" use="required" />
+                                          <xs:attribute name="points" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" name="team-stats">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="distance-run">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="distance-run-breakdown">
+                                        <xs:complexType>
+                                          <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                          <xs:attribute name="meters" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="kilometers" type="xs:decimal" use="required" />
+                                          <xs:attribute name="feet" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="miles" type="xs:decimal" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="meters" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="kilometers" type="xs:decimal" use="required" />
+                                    <xs:attribute name="feet" type="xs:unsignedInt" use="required" />
+                                    <xs:attribute name="miles" type="xs:decimal" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="average-speed">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="average-speed-breakdown">
+                                        <xs:complexType>
+                                          <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                          <xs:attribute name="kilometers-per-hour" type="xs:decimal" use="required" />
+                                          <xs:attribute name="miles-per-hour" type="xs:decimal" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="kilometers-per-hour" type="xs:decimal" use="required" />
+                                    <xs:attribute name="miles-per-hour" type="xs:decimal" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="possession-breakdown">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="possession-report">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="frequency">
+                                              <xs:complexType>
+                                                <xs:attribute name="frequency" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="touch-frequency-pct" type="xs:decimal" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="points-per-poss">
+                                              <xs:complexType>
+                                                <xs:attribute name="points-per-poss" type="xs:decimal" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="field-goals">
+                                              <xs:complexType>
+                                                <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="att" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="pct" type="xs:decimal" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="three-pointers">
+                                              <xs:complexType>
+                                                <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="att" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="pct" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="free-throws">
+                                              <xs:complexType>
+                                                <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="att" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="pct" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="true-shooting-pct">
+                                              <xs:complexType>
+                                                <xs:attribute name="pct" type="xs:decimal" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="assists">
+                                              <xs:complexType>
+                                                <xs:attribute name="assists" type="xs:unsignedByte" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="turnovers">
+                                              <xs:complexType>
+                                                <xs:attribute name="turnovers" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="live-ball" type="xs:string" use="required" />
+                                                <xs:attribute name="live-ball-points-allowed" type="xs:string" use="required" />
+                                                <xs:attribute name="dead-ball" type="xs:string" use="required" />
+                                                <xs:attribute name="dead-ball-points-allowed" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="rebounds">
+                                              <xs:complexType>
+                                                <xs:attribute name="offensive" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="touches" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="team" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" name="players">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="player">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:attribute name="first-name" type="xs:string" use="required" />
+                                          <xs:attribute name="last-name" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="player-code">
+                                        <xs:complexType>
+                                          <xs:attribute name="global-id" type="xs:unsignedInt" use="required" />
+                                          <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="games">
+                                        <xs:complexType>
+                                          <xs:attribute name="games" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="reason" type="xs:string" use="required" />
+                                          <xs:attribute name="games-started" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="position" type="xs:string" use="required" />
+                                          <xs:attribute name="on-court" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="total-seconds-tracked">
+                                        <xs:complexType>
+                                          <xs:attribute name="seconds" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="time-of-possession">
+                                        <xs:complexType>
+                                          <xs:attribute name="seconds" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="distance-run">
+                                        <xs:complexType>
+                                          <xs:sequence minOccurs="0">
+                                            <xs:element maxOccurs="unbounded" name="distance-run-breakdown">
+                                              <xs:complexType>
+                                                <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                                <xs:attribute name="meters" type="xs:unsignedShort" use="required" />
+                                                <xs:attribute name="kilometers" type="xs:decimal" use="required" />
+                                                <xs:attribute name="feet" type="xs:unsignedShort" use="required" />
+                                                <xs:attribute name="miles" type="xs:decimal" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="meters" type="xs:string" use="required" />
+                                          <xs:attribute name="kilometers" type="xs:string" use="required" />
+                                          <xs:attribute name="feet" type="xs:string" use="required" />
+                                          <xs:attribute name="miles" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="average-speed">
+                                        <xs:complexType>
+                                          <xs:sequence minOccurs="0">
+                                            <xs:element maxOccurs="unbounded" name="average-speed-breakdown">
+                                              <xs:complexType>
+                                                <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                                <xs:attribute name="kilometers-per-hour" type="xs:decimal" use="required" />
+                                                <xs:attribute name="miles-per-hour" type="xs:decimal" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="kilometers-per-hour" type="xs:decimal" use="required" />
+                                          <xs:attribute name="miles-per-hour" type="xs:decimal" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="number-of-touches">
+                                        <xs:complexType>
+                                          <xs:sequence minOccurs="0">
+                                            <xs:element maxOccurs="unbounded" name="touch-breakdown">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="dribble-touches">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="dribbles-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="dribbles-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="touches" type="xs:unsignedByte" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="time-of-possession-touches">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="seconds-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="seconds-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="touches" type="xs:unsignedByte" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                                <xs:attribute name="average-seconds-per-touch" type="xs:decimal" use="optional" />
+                                                <xs:attribute name="average-dribbles-per-touch" type="xs:decimal" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="touches" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="field-goals">
+                                        <xs:complexType>
+                                          <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="percentage" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="free-throws">
+                                        <xs:complexType>
+                                          <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="percentage" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="three-point-field-goals">
+                                        <xs:complexType>
+                                          <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="percentage" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="shot-breakdowns">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="shot-breakdown">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="field-goals-by-defenders">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="defenders-to" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="defenders-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="field-goals-by-shot-clock">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="time-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="time-to" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="three-point-field-goals-by-shot-clock">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="time-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="time-to" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="field-goals-by-time-of-possession">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="seconds-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="seconds-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="three-point-field-goals-by-time-of-possession">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="seconds-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="seconds-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="field-goals-by-dribbles">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="dribbles-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="dribbles-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="three-point-field-goals-by-dribbles">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="dribbles-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="dribbles-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="field-goals-by-distance">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="distance-from" type="xs:string" use="required" />
+                                                      <xs:attribute name="distance-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="points-type" type="xs:unsignedByte" use="optional" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="three-point-field-goals-by-distance">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="distance-from" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="distance-to" type="xs:string" use="required" />
+                                                      <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="passes">
+                                        <xs:complexType>
+                                          <xs:sequence minOccurs="0">
+                                            <xs:element maxOccurs="unbounded" name="pass-breakdown">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="pass-types">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="regular" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="outlet" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="relocation" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="pass-ahead" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="skip" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="interior" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="ball-reversal" type="xs:unsignedByte" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="pass-received-from">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="field-goals">
+                                                          <xs:complexType>
+                                                            <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="three-point-field-goals">
+                                                          <xs:complexType>
+                                                            <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="assists">
+                                                          <xs:complexType>
+                                                            <xs:attribute name="assists" type="xs:unsignedByte" use="required" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="from-player-id" type="xs:unsignedShort" use="required" />
+                                                      <xs:attribute name="from-global-player-id" type="xs:unsignedInt" use="required" />
+                                                      <xs:attribute name="from-player-first-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="from-player-last-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="passes" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="pct-of-total" type="xs:decimal" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="pass-made-to">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="field-goals">
+                                                          <xs:complexType>
+                                                            <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="three-point-field-goals">
+                                                          <xs:complexType>
+                                                            <xs:attribute name="made" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="attempted" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="percentage" type="xs:string" use="required" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="assists">
+                                                          <xs:complexType>
+                                                            <xs:attribute name="assists" type="xs:unsignedByte" use="required" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="to-player-id" type="xs:unsignedShort" use="required" />
+                                                      <xs:attribute name="to-global-player-id" type="xs:unsignedInt" use="required" />
+                                                      <xs:attribute name="to-player-first-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="to-player-last-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="passes" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="pct-of-total" type="xs:decimal" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="breakdown" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="passes-made" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="passes-received" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="shot-log">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="shot">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="closest-defender">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="player-id" type="xs:unsignedShort" use="required" />
+                                                      <xs:attribute name="global-player-id" type="xs:unsignedInt" use="required" />
+                                                      <xs:attribute name="defender-first-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="defender-last-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="defender-distance" type="xs:decimal" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="period" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="game-clock" type="xs:string" use="required" />
+                                                <xs:attribute name="time" type="xs:unsignedLong" use="required" />
+                                                <xs:attribute name="points-type" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="touch-time" type="xs:decimal" use="required" />
+                                                <xs:attribute name="dribbles" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="shot-distance" type="xs:decimal" use="required" />
+                                                <xs:attribute name="result" type="xs:string" use="required" />
+                                                <xs:attribute name="offense-direction" type="xs:string" use="required" />
+                                                <xs:attribute name="x-coordinate" type="xs:decimal" use="required" />
+                                                <xs:attribute name="y-coordinate" type="xs:decimal" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="rebound-log">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="rebound">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="shooter">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="player-id" type="xs:unsignedShort" use="required" />
+                                                      <xs:attribute name="global-player-id" type="xs:unsignedInt" use="required" />
+                                                      <xs:attribute name="shooter-first-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="shooter-last-name" type="xs:string" use="required" />
+                                                      <xs:attribute name="points-type" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="shot-distance" type="xs:decimal" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="period" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="game-clock" type="xs:string" use="required" />
+                                                <xs:attribute name="time" type="xs:unsignedLong" use="required" />
+                                                <xs:attribute name="rebound-type-id" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="rebound-type" type="xs:string" use="required" />
+                                                <xs:attribute name="rebound-dist" type="xs:decimal" use="required" />
+                                                <xs:attribute name="contesting-opponents" type="xs:unsignedByte" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="plus-minus">
+                                        <xs:complexType>
+                                          <xs:attribute name="number" type="xs:byte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="points">
+                                        <xs:complexType>
+                                          <xs:attribute name="points" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="rebounds">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="rebound-breakdown">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="distance">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="avg-dist" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="contested">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="contested" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="contested-pct" type="xs:string" use="required" />
+                                                      <xs:attribute name="uncontested" type="xs:unsignedByte" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="chances">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="chances" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="rebound-pct" type="xs:string" use="required" />
+                                                      <xs:attribute name="deferred" type="xs:unsignedByte" use="required" />
+                                                      <xs:attribute name="adjusted-rebound-pct" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="rebound-type-id" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="rebound-type" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="offensive" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="defensive" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="total" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="assists">
+                                        <xs:complexType>
+                                          <xs:attribute name="assists" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="secondary-assists" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="ft-assists" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="adjusted-assists" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="adjusted-assists-to-pass-pct" type="xs:decimal" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="number-of-dribbles">
+                                        <xs:complexType>
+                                          <xs:attribute name="dribbles" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="steals">
+                                        <xs:complexType>
+                                          <xs:attribute name="steals" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="blocked-shots">
+                                        <xs:complexType>
+                                          <xs:attribute name="blocked-shots" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="turnovers">
+                                        <xs:complexType>
+                                          <xs:attribute name="turnovers" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="personal-fouls">
+                                        <xs:complexType>
+                                          <xs:attribute name="fouls" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="disqualifications" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="technical-fouls">
+                                        <xs:complexType>
+                                          <xs:attribute name="player" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="flagrant-fouls">
+                                        <xs:complexType>
+                                          <xs:attribute name="flagrant-fouls" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="ejections">
+                                        <xs:complexType>
+                                          <xs:attribute name="player" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="fouled">
+                                        <xs:complexType>
+                                          <xs:attribute name="fg-made" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="fg-attempted" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="non-shooting" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="non-shooting-penalty" type="xs:unsignedByte" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="pass-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="assist-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="made-shot-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="missed-shot-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="offensive-rebound-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="defensive-rebound-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="turnovers-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="steals-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="first-touch-coordinates">
+                                        <xs:complexType>
+                                          <xs:attribute name="coordinates" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="team" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
